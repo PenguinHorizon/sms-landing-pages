@@ -104,22 +104,22 @@ const Home = () => {
           
           {/* --- DECORATIVE SCHOOL ELEMENTS (Whole Section) --- */}
           {/* Top Left - Book - Floating near the headline */}
-          <div className="hero-deco-item hero-deco-1 absolute top-20 left-4 lg:left-10 z-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-4 shadow-2xl transform -rotate-12 backdrop-blur-md border border-white/20 will-change-transform opacity-60 lg:opacity-80">
+          <div className="hero-deco-item hero-deco-1 absolute top-20 left-4 lg:left-10 z-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-4 shadow-2xl transform -rotate-12 backdrop-blur-md border border-white/20 will-change-transform opacity-60 lg:opacity-80 hidden md:block">
             <BookOpen className="w-8 h-8 text-white drop-shadow-md" />
           </div>
           
           {/* Bottom Left - Microscope - Floating near the CTA */}
-          <div className="hero-deco-item hero-deco-3 absolute bottom-32 left-8 lg:left-20 z-0 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl p-4 shadow-2xl transform -rotate-6 backdrop-blur-md border border-white/20 will-change-transform opacity-60 lg:opacity-80">
+          <div className="hero-deco-item hero-deco-3 absolute bottom-32 left-8 lg:left-20 z-0 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl p-4 shadow-2xl transform -rotate-6 backdrop-blur-md border border-white/20 will-change-transform opacity-60 lg:opacity-80 hidden md:block">
             <Microscope className="w-8 h-8 text-white drop-shadow-md" />
           </div>
           
           {/* Top Center - Pencil - Floating between text and image */}
-          <div className="hero-deco-item hero-deco-2 absolute top-32 left-1/2 -translate-x-32 lg:-translate-x-12 z-0 bg-gradient-to-br from-orange-400 to-red-500 rounded-full p-4 shadow-2xl transform rotate-12 backdrop-blur-md border border-white/20 will-change-transform opacity-50 lg:opacity-80">
+          <div className="hero-deco-item hero-deco-2 absolute top-32 left-1/2 -translate-x-32 lg:-translate-x-12 z-0 bg-gradient-to-br from-orange-400 to-red-500 rounded-full p-4 shadow-2xl transform rotate-12 backdrop-blur-md border border-white/20 will-change-transform opacity-50 lg:opacity-80 hidden md:block">
             <Pencil className="w-6 h-6 lg:w-7 lg:h-7 text-white drop-shadow-md" />
           </div>
 
           {/* Bottom Right - Calculator - Floating near the bottom of the image */}
-          <div className="hero-deco-item hero-deco-4 absolute bottom-20 right-10 lg:right-24 z-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl p-4 shadow-2xl transform rotate-6 backdrop-blur-md border border-white/20 will-change-transform opacity-70 lg:opacity-90">
+          <div className="hero-deco-item hero-deco-4 absolute bottom-20 right-10 lg:right-24 z-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl p-4 shadow-2xl transform rotate-6 backdrop-blur-md border border-white/20 will-change-transform opacity-70 lg:opacity-90 hidden md:block">
             <Calculator className="w-8 h-8 text-white drop-shadow-md" />
           </div>
 
@@ -136,8 +136,8 @@ const Home = () => {
             </div>
             
             {/* Typography Matching Screenshot */}
-            <h1 className="text-[3.5rem] md:text-[4.5rem] xl:text-[5.5rem] text-white leading-[1.05] mb-8 tracking-tight font-light will-change-transform">
-              <div className="hero-title-line">Free<span className="font-bold">Online</span>School</div>
+            <h1 className="text-5xl md:text-[4.5rem] xl:text-[5.5rem] text-white leading-[1.1] mb-6 md:mb-8 tracking-tight font-light will-change-transform">
+              <div className="hero-title-line">Free <span className="font-bold">Online</span> School</div>
               <div className="hero-title-line font-bold">Management</div>
               <div className="hero-title-line">Software</div>
             </h1>
@@ -178,7 +178,7 @@ const Home = () => {
 
               {/* --- FLOATING UI CARDS --- */}
               {/* FLOATING UI CARD 1: Students */}
-              <div className="hero-float-card hero-float-card-1 absolute top-10 -left-16 xl:-left-24 bg-[#ebebfa] rounded-xl p-4 shadow-xl z-20 w-56 flex items-center gap-4 will-change-transform transform -rotate-2">
+              <div className="hero-float-card hero-float-card-1 absolute top-10 -left-16 xl:-left-24 bg-[#ebebfa] rounded-xl p-4 shadow-xl z-20 w-56 hidden lg:flex items-center gap-4 will-change-transform transform -rotate-2">
                  <div className="w-10 h-10 rounded-full bg-indigo-200 flex items-center justify-center text-indigo-600">
                    <Users className="w-5 h-5" fill="currentColor" />
                  </div>
@@ -190,7 +190,7 @@ const Home = () => {
               </div>
 
               {/* FLOATING UI CARD 2: Employees */}
-              <div className="hero-float-card hero-float-card-2 absolute -top-8 -right-8 xl:-right-16 bg-white rounded-xl p-4 shadow-2xl z-20 w-48 border border-gray-100 will-change-transform transform rotate-3">
+              <div className="hero-float-card hero-float-card-2 absolute -top-8 -right-8 xl:-right-16 bg-white rounded-xl p-4 shadow-2xl z-20 w-48 border border-gray-100 will-change-transform transform rotate-3 hidden lg:block">
                  <div>
                     <div className="flex justify-between items-start mb-2">
                       <div className="w-8 h-8 rounded bg-purple-100 flex items-center justify-center text-purple-600">
@@ -209,7 +209,7 @@ const Home = () => {
               </div>
 
               {/* FLOATING UI CARD 3: Revenue */}
-              <div className="hero-float-card hero-float-card-3 absolute bottom-10 -left-20 xl:-left-28 bg-white/95 backdrop-blur rounded-2xl p-5 shadow-2xl z-20 w-64 border border-white/20 will-change-transform text-left">
+              <div className="hero-float-card hero-float-card-3 absolute bottom-10 -left-20 xl:-left-28 bg-white/95 backdrop-blur rounded-2xl p-5 shadow-2xl z-20 w-64 border border-white/20 will-change-transform text-left hidden lg:block">
                  <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">Revenue</p>
                  <p className="text-3xl font-black text-gray-900 mb-4">$2420.00</p>
                  {/* Waveform graphic placeholder */}
@@ -233,7 +233,7 @@ const Home = () => {
               </div>
 
               {/* Decorative Dollar Graphic */}
-              <div className="hero-float-card absolute -bottom-5 -right-5 xl:-right-10 z-30 opacity-80 will-change-transform">
+              <div className="hero-float-card absolute -bottom-5 -right-5 xl:-right-10 z-30 opacity-80 will-change-transform hidden lg:block">
                  <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
                     <circle cx="60" cy="60" r="40" stroke="white" strokeWidth="2" strokeDasharray="4 4"/>
                     <path d="M60 30V90M45 45C45 45 65 35 65 55C65 75 45 65 45 85C45 105 55 90 55 90" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
