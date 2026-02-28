@@ -89,7 +89,7 @@ const Home = () => {
   }, { scope: container });
 
   return (
-    <main className="pt-20" ref={container}>
+    <main className="pt-20" id="home" ref={container}>
       {/* PROFESSIONAL HERO SECTION */}
       <section className="relative overflow-hidden bg-[#2f2890] min-h-[90vh] flex items-center">
         
@@ -252,7 +252,7 @@ const Home = () => {
       <ConnectedSchools />
 
       {/* FEATURE SHOWCASE COMPONENT */}
-      <FeatureShowcase />
+      <div id="features"><FeatureShowcase /></div>
 
       {/* WHY CHOOSE US COMPONENT */}
       <WhyChooseUs />
@@ -261,13 +261,13 @@ const Home = () => {
       <MobileShowcase />
 
       {/* MODULES GRID COMPONENT */}
-      <Modules />
+      <div id="modules"><Modules /></div>
 
       {/* PRICING COMPONENT */}
-      <Pricing />
+      <div id="pricing"><Pricing /></div>
 
       {/* FAQS COMPONENT */}
-      <FAQS />
+      <div id="faqs"><FAQS /></div>
     </main>
   );
 };

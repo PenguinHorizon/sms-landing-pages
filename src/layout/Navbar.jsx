@@ -5,6 +5,22 @@ import { ChevronDown, Cloud, MonitorSmartphone, Monitor, Blocks, Server, BookOpe
 
 const Navbar = () => {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  
+  const handleScroll = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const offset = 80; // Height of the fixed navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      setIsProductsOpen(false); // Close dropdown if open
+    }
+  };
   const dropdownRef = useRef();
   const navContainerRef = useRef();
 
@@ -78,139 +94,28 @@ const Navbar = () => {
 
           {/* Center Navigation */}
           <div className="hidden md:flex flex-1 justify-center">
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-6 lg:space-x-8">
               
-              {/* Products Dropdown Trigger */}
-              <div 
-                className="nav-elem relative"
-                onMouseEnter={() => setIsProductsOpen(true)}
-                onMouseLeave={() => setIsProductsOpen(false)}
-              >
-                <button className="flex items-center text-[#5c3cdd] font-semibold text-[15px] hover:text-[#452ab5] transition-colors py-2 group">
-                  Products
-                  <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${isProductsOpen ? 'rotate-180' : ''}`} />
-                  {/* Decorative Circle from screenshot */}
-                  <span className="absolute -left-2 w-8 h-8 border border-gray-300 rounded-full opacity-60 -z-10 bg-transparent group-hover:border-indigo-300 transition-colors"></span>
-                </button>
+              <a href="#home" onClick={(e) => handleScroll(e, 'home')} className="nav-elem flex items-center text-gray-800 font-semibold text-[15px] hover:text-[#5c3cdd] transition-colors py-2 group cursor-pointer">
+                Home
+              </a>
+              
+              <a href="#features" onClick={(e) => handleScroll(e, 'features')} className="nav-elem flex items-center text-gray-800 font-semibold text-[15px] hover:text-[#5c3cdd] transition-colors py-2 group cursor-pointer">
+                Features
+              </a>
 
-                {/* Mega Dropdown */}
-                <div 
-                  ref={dropdownRef}
-                  className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-gray-100 p-6 opacity-0 hidden"
-                >
-                  <div className="flex gap-8">
-                    {/* Column 1: Cloud Solutions */}
-                    <div className="flex-1">
-                      <h3 className="text-gray-500 font-semibold mb-6 flex items-center">
-                         Cloud Solutions
-                      </h3>
-                      <div className="space-y-6">
-                        <a href="#" className="dropdown-item block group">
-                          <div className="flex items-start">
-                            <Cloud className="w-5 h-5 mt-0.5 mr-3 text-gray-700 group-hover:text-blue-600 transition-colors" />
-                            <div>
-                              <div className="flex items-center">
-                                <span className="font-bold text-gray-800 text-[15px] group-hover:text-blue-600 transition-colors">Schoolify Basic</span>
-                                {renderBadge('Free')}
-                              </div>
-                              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Free online school management software for schools, colleges, and institutes.</p>
-                            </div>
-                          </div>
-                        </a>
-                        <a href="#" className="dropdown-item block group">
-                          <div className="flex items-start">
-                            <MonitorSmartphone className="w-5 h-5 mt-0.5 mr-3 text-gray-700 group-hover:text-blue-600 transition-colors" />
-                            <div>
-                              <div className="flex items-center">
-                                <span className="font-bold text-gray-800 text-[15px] group-hover:text-blue-600 transition-colors">Mobile Apps</span>
-                                {renderBadge('Free')}
-                              </div>
-                              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Android and iOS apps for students, teachers, and parents.</p>
-                            </div>
-                          </div>
-                        </a>
-                        <a href="#" className="dropdown-item block group">
-                          <div className="flex items-start">
-                            <Monitor className="w-5 h-5 mt-0.5 mr-3 text-gray-700 group-hover:text-blue-600 transition-colors" />
-                            <div>
-                              <div className="flex items-center">
-                                <span className="font-bold text-gray-800 text-[15px] group-hover:text-blue-600 transition-colors">Schoolify Desktop</span>
-                                {renderBadge('Paid')}
-                              </div>
-                              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Upgraded full-featured version with desktop access for Windows, macOS, and Linux.</p>
-                            </div>
-                          </div>
-                        </a>
-                        <a href="#" className="dropdown-item block group">
-                          <div className="flex items-start">
-                            <Blocks className="w-5 h-5 mt-0.5 mr-3 text-gray-700 group-hover:text-blue-600 transition-colors" />
-                            <div>
-                              <div className="flex items-center">
-                                <span className="font-bold text-gray-800 text-[15px] group-hover:text-blue-600 transition-colors">Schoolify Integrations</span>
-                                {renderBadge('Free')}
-                              </div>
-                              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Connect Schoolify with SMS gateways, WhatsApp APIs, and other tools.</p>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
+              <a href="#modules" onClick={(e) => handleScroll(e, 'modules')} className="nav-elem flex items-center text-gray-800 font-semibold text-[15px] hover:text-[#5c3cdd] transition-colors py-2 group cursor-pointer">
+                Modules
+              </a>
 
-                    {/* Column 2: Self Hosted */}
-                    <div className="flex-1">
-                      <h3 className="text-gray-500 font-semibold mb-6">Self Hosted</h3>
-                      <div className="space-y-6">
-                        <a href="#" className="dropdown-item block group">
-                          <div className="flex items-start">
-                            <Server className="w-5 h-5 mt-0.5 mr-3 text-gray-700 group-hover:text-blue-600 transition-colors" />
-                            <div>
-                              <div className="flex items-center">
-                                <span className="font-bold text-gray-800 text-[15px] group-hover:text-blue-600 transition-colors">Schoolify Pro</span>
-                                {renderBadge('Paid')}
-                              </div>
-                              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Advanced and customizable self-hosted solution for large institutions.</p>
-                            </div>
-                          </div>
-                        </a>
-                        <a href="#" className="dropdown-item block group">
-                          <div className="flex items-start">
-                            <BookOpen className="w-5 h-5 mt-0.5 mr-3 text-gray-700 group-hover:text-blue-600 transition-colors" />
-                            <div>
-                              <div className="flex items-center">
-                                <span className="font-bold text-gray-800 text-[15px] group-hover:text-blue-600 transition-colors">Schoolify LMS</span>
-                                {renderBadge('Paid')}
-                              </div>
-                              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Complete Learning Management System for online courses and e-learning businesses.</p>
-                            </div>
-                          </div>
-                        </a>
-                        <a href="#" className="dropdown-item block group">
-                          <div className="flex items-start">
-                            <ShieldCheck className="w-5 h-5 mt-0.5 mr-3 text-gray-700 group-hover:text-blue-600 transition-colors" />
-                            <div>
-                              <div className="flex items-center">
-                                <span className="font-bold text-gray-800 text-[15px] group-hover:text-blue-600 transition-colors">Cloud Services</span>
-                                {renderBadge('Paid')}
-                              </div>
-                              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Optional secure cloud hosting and data storage for Schoolify systems.</p>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <a href="#pricing" onClick={(e) => handleScroll(e, 'pricing')} className="nav-elem flex items-center text-gray-800 font-semibold text-[15px] hover:text-[#5c3cdd] transition-colors py-2 group cursor-pointer">
+                Pricing
+              </a>
 
-              {/* Other Links */}
-              <button className="nav-elem flex items-center text-gray-800 font-semibold text-[15px] hover:text-[#5c3cdd] transition-colors py-2 group">
-                Explore
-                <ChevronDown className="ml-1 w-4 h-4 text-gray-400 group-hover:text-[#5c3cdd] transition-colors" />
-              </button>
-              <button className="nav-elem flex items-center text-gray-800 font-semibold text-[15px] hover:text-[#5c3cdd] transition-colors py-2 group">
-                Support
-                <ChevronDown className="ml-1 w-4 h-4 text-gray-400 group-hover:text-[#5c3cdd] transition-colors" />
-              </button>
+              <a href="#faqs" onClick={(e) => handleScroll(e, 'faqs')} className="nav-elem flex items-center text-gray-800 font-semibold text-[15px] hover:text-[#5c3cdd] transition-colors py-2 group cursor-pointer">
+                FAQs
+              </a>
+
             </div>
           </div>
 
