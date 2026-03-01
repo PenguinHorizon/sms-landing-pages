@@ -154,9 +154,9 @@ const WhyChooseUs = () => {
                
                <div className="space-y-10 sm:space-y-12">
                  
-                 <div className="wcu-list-item flex flex-col sm:flex-row gap-5 items-start">
-                   <div className="w-12 h-12 rounded-full border border-indigo-100 flex items-center justify-center shrink-0 text-gray-600 bg-gray-50/50">
-                     <Lightbulb className="w-5 h-5" strokeWidth={1.5} />
+                 <div className="wcu-list-item flex flex-row gap-4 sm:gap-5 items-start">
+                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-indigo-100 flex items-center justify-center shrink-0 text-gray-600 bg-gray-50/50">
+                     <Lightbulb className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />
                    </div>
                    <div>
                      <h3 className="text-lg font-bold text-gray-900 mb-2">Innovation at our core</h3>
@@ -166,9 +166,9 @@ const WhyChooseUs = () => {
                    </div>
                  </div>
                  
-                 <div className="wcu-list-item flex flex-col sm:flex-row gap-5 items-start">
-                   <div className="w-12 h-12 rounded-full border border-indigo-100 flex items-center justify-center shrink-0 text-gray-600 bg-gray-50/50">
-                     <Target className="w-5 h-5" strokeWidth={1.5} />
+                 <div className="wcu-list-item flex flex-row gap-4 sm:gap-5 items-start">
+                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-indigo-100 flex items-center justify-center shrink-0 text-gray-600 bg-gray-50/50">
+                     <Target className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />
                    </div>
                    <div>
                      <h3 className="text-lg font-bold text-gray-900 mb-2">Simplifying complexity</h3>
@@ -178,9 +178,9 @@ const WhyChooseUs = () => {
                    </div>
                  </div>
                  
-                 <div className="wcu-list-item flex flex-col sm:flex-row gap-5 items-start">
-                   <div className="w-12 h-12 rounded-full border border-indigo-100 flex items-center justify-center shrink-0 text-gray-600 bg-gray-50/50">
-                     <TrendingUp className="w-5 h-5" strokeWidth={1.5} />
+                 <div className="wcu-list-item flex flex-row gap-4 sm:gap-5 items-start">
+                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-indigo-100 flex items-center justify-center shrink-0 text-gray-600 bg-gray-50/50">
+                     <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />
                    </div>
                    <div>
                      <h3 className="text-lg font-bold text-gray-900 mb-2">Empowering institutional growth</h3>
